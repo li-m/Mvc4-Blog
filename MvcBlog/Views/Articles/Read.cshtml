@@ -1,0 +1,22 @@
+﻿@using MvcBlog.Models
+@model MvcBlog.Models.Article
+
+<table id="ViewArticle">
+    <tr>
+        <td>Title</td>
+        <td>@Html.DisplayTextFor(a=>a.Title)</td>
+    </tr>
+
+    <tr>
+        <td>Content</td>
+        <td>@Html.DisplayTextFor(a => a.Content)</td>
+
+    </tr>
+    <tr>
+        <td colspan="2">
+            @Html.ActionLink("Modify", "Modify", "Articles", new { Id = Model.Id }, new { })
+            @Html.ActionLink("Return", "List", "Articles")
+        </td>
+    </tr>
+
+</table>

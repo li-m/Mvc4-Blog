@@ -1,0 +1,32 @@
+﻿@using MvcBlog.Models
+@model MvcBlog.Models.Article
+
+@using (Html.BeginForm("Modify", "Articles", FormMethod.Post))
+{
+    @Html.HiddenFor(a => a.Id)
+    <table id="ModifyArticle">
+        <tr>
+            <td colspan="2">Modify</td>
+        </tr>
+        <tr>
+            <td>Title:</td>
+            <td>
+                @Html.TextBoxFor(a => a.Title)
+            </td>
+        </tr>
+        <tr>
+            <td>Content:</td>
+            <td>
+                @Html.TextAreaFor(a => a.Content, 10, 60, null)
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="OK" />
+                @Html.ActionLink("Return", "List", "Articles")
+            </td>
+        </tr>
+
+    </table>
+}
+

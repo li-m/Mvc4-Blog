@@ -1,0 +1,15 @@
+﻿body {
+    font-family: Arial;
+}
+
+table {
+    border: 1px solid lightblue;
+    width: 600px;
+    margin: 10px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid lightblue;
+    padding: 10px;
+}

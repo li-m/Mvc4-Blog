@@ -1,0 +1,28 @@
+﻿@using MvcBlog.Models
+<!--Traverse article list-->
+<div>
+    <table id="ArticleList">
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Time</th>
+            <th>Operations</th>
+        </tr>
+        @foreach (Article article in ViewBag.ArticleList)
+        {
+            <tr>
+                <td>@article.Id</td>
+                <td>@Html.ActionLink(@article.Title, "Read", new { id = article.Id })</td>
+                <td>@article.Date</td>
+                <td>
+                    @Html.ActionLink("Delete", "Delete", new { id = article.Id })
+                    @Html.ActionLink("Edit", "Modify", new { id = article.Id })
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+
+<div>
+    @Html.ActionLink("New", "Create")
+</div>
